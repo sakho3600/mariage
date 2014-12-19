@@ -1,0 +1,4 @@
+services:
+#    mariage_guest.example:
+#        class: Mariage\GuestBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

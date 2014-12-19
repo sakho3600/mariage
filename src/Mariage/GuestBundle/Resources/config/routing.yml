@@ -1,0 +1,4 @@
+mariage_guest_homepage:
+    path:     /
+    defaults: { _controller: MariageGuestBundle:Guest:index }
+
