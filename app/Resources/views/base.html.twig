@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Mariage de Mélanie et Florian{% endblock %}</title>
+    <title>{% block main_title %}Mariage de Mélanie et Florian{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
 </head>
+
 <body class="container">
     <div class="row">
     {% block menu %}

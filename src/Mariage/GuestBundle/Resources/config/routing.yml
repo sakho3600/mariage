@@ -2,3 +2,21 @@ mariage_guest_homepage:
     path:     /
     defaults: { _controller: MariageGuestBundle:Guest:index }
 
+
+mariage_guest_add:
+    path:     /add_guest
+    defaults: { _controller: MariageGuestBundle:Guest:addGuest }
+
+
+mariage_guest_remove:
+    path:     /remove_guest/{id}
+    defaults: { _controller: MariageGuestBundle:Guest:removeGuest }
+    requirements:
+        id: \d+
+
+
+mariage_guest_edit:
+    path:     /edit_guest/{id}
+    defaults: { _controller: MariageGuestBundle:Guest:editGuest }
+    requirements:
+        id: \d+

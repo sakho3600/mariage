@@ -1,0 +1,4 @@
+services:
+#    mariage_user.example:
+#        class: Mariage\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

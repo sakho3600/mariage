@@ -2,15 +2,37 @@
 
 {% extends "MariageGuestBundle::layout.html.twig" %}
 
+
+{% block title %}
+    <h1 class="page-header text-center"> Liste des invités <span class="badge">{{ nbGuests }}</span></h1>
+{% endblock %}
+
 {% block table_guests %}
-    <table class="table table-bordered table-striped">
+    <table class="well table table-bordered table-striped">
         <thead>
             <th> Prénom     </th>
             <th> Famille    </th>
             <th> Confirmé ? </th>
-            <th> Date conf  </th>
+            <th> Date confirm  </th>
         </thead>
 
+        {% for guest in listGuests %}
+            <tr>
+                <td>{{ guest.firstname|capitalize }}</td>
+                <td>{{ guest.family|capitalize }}</td>
+                <td>
+                    {% if guest.confirm %} <span class="glyphicon glyphicon-ok"></span>
+                    {% endif %}
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('mariage_guest_edit', {'id' : guest.id}) }}"> <span class="glyphicon glyphicon-pencil"></span> </a>
+                        <a href=""> <span class="glyphicon glyphicon-remove"></span> </a>
+                    {% endif %}
+                </td>
+                <td>{% if guest.dateConf is not null %} {{ guest.dateConf|date('d/m/Y') }} {% endif %}</td>
+            </tr>
+        {% endfor %}
     </table>
-
+    <div>
+        <a href="{{ path('mariage_guest_add') }}"><span class="glyphicon glyphicon-plus"></span>Ajouter un invité</a>
+    </div>
 {% endblock %}

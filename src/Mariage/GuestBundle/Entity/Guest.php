@@ -3,6 +3,7 @@
 namespace Mariage\GuestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * Guest
@@ -19,12 +20,12 @@ class Guest
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateConf", type="datetime")
+     * @ORM\Column(name="dateConf", type="datetime", nullable=true)
      */
     private $dateConf;
 
@@ -150,5 +151,11 @@ class Guest
     public function getConfirm()
     {
         return $this->confirm;
+    }
+
+    public function __construct()
+    {
+        $this->confirm = false;
+        $this->dateConf = null;
     }
 }
