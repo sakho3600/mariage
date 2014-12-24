@@ -1,0 +1,38 @@
+{% extends "MariageUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form action="{{ path("fos_user_security_check") }}" method="post" class="form-horizontal col-xs-12" role="form">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+        <div class="form-group">
+            <label for="username" class="col-xs-12 col-sm-2 control-label"> Nom utilisateur </label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" class="col-xs-12 col-sm-6" required="required" />
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="col-xs-12 col-sm-2 control-label"> Mot de passe </label>
+            <input type="password" id="password" name="_password" class="col-xs-12 col-sm-6" required="required" />
+        </div>
+
+        <div class="form-group">
+            <label for="remember_me" class="col-xs-12 col-sm-2 control-label"> Se souvenir de moi </label>
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-offset-2">
+                <button type="submit" id="_submit" name="_submit" class="btn btn-primary" />
+                    <span class="glyphicon glyphicon-ok"></span> Envoyer
+                </button>
+            </div>
+
+        </div>
+    </form>
+
+{% endblock fos_user_content %}
