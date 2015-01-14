@@ -4,7 +4,7 @@
 
 
 {% block title %}
-    <h1 class="page-header text-center"> Liste des invités <span class="badge">{{ nbGuests }}</span></h1>
+    <h1 class="page-header text-center titles"> Liste des invités <span class="badge">{{ nbGuests }}</span></h1>
 {% endblock %}
 
 {% block table_guests %}
@@ -32,7 +32,10 @@
             </tr>
         {% endfor %}
     </table>
+
+    {% if is_granted("ROLE_ADMIN") %}
     <div>
         <a href="{{ path('mariage_guest_add') }}"><span class="glyphicon glyphicon-plus"></span>Ajouter un invité</a>
     </div>
+    {% endif %}
 {% endblock %}

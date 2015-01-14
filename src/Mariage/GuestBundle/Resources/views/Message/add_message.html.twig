@@ -4,8 +4,9 @@
 
 
 {% block title %}
-    <h1 class="page-header text-center"> Ajouter un invité</h1>
+    <h1 class="page-header text-center titles"> Confirmer sa présence </h1>
 {% endblock %}
+
 
 {% block table_guests %}
 
@@ -19,14 +20,14 @@
         </div>
 
         <div class="form-group">
-            {{ form_label(form.family, 'Famille', {'label_attr': {'class': 'control-label col-xs-12 col-sm-2'}} ) }}
-            {{ form_widget(form.family, {'attr': {'class': 'col-xs-12 col-sm-6'}} ) }}
+            {{ form_label(form.body, 'Message', {'label_attr': {'class': 'control-label col-xs-12 col-sm-2'}} ) }}
+            {{ form_widget(form.body, {'attr': {'class': 'col-xs-12 col-sm-6'}} ) }}
         </div>
 
         <div class="form-group">
             <div class="col-xs-12 col-sm-offset-2">
                 <button type="submit" name="submit" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-ok-sign"></span> Enregister </button>
+                    <span class="glyphicon glyphicon-envelope"></span> Envoyer </button>
             </div>
         </div>
 

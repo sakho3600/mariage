@@ -27,6 +27,9 @@ class GuestController extends Controller
     }
 
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function addGuestAction(Request $request)
     {
         $guest = new Guest();
@@ -86,6 +89,19 @@ class GuestController extends Controller
         return $this->render('MariageGuestBundle:Guest:add_guest.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+
+
+    public function historyAction()
+    {
+        return $this->render('MariageGuestBundle:Guest:history.html.twig'
+        );
+    }
+
+    public function organizationAction()
+    {
+        return $this->render('MariageGuestBundle:Guest:organization.html.twig'
+        );
     }
 
 }

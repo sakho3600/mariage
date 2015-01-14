@@ -2,9 +2,15 @@ app:
     resource: @AppBundle/Controller/
     type:     annotation
 
+
 mariage_guest:
     resource: "@MariageGuestBundle/Resources/config/routing.yml"
     prefix:   /guest
+
+
+mariage_present:
+    resource: "@MariagePresentBundle/Resources/config/routing.yml"
+    prefix:   /present
 
 
 fos_user_security:

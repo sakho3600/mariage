@@ -721,12 +721,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "2c378af30f06fe6fdd9cedd136714696536ab30e"
+                "reference": "4ceecb62f8bfbee56a5ec83f5ab6124710cf89d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/2c378af30f06fe6fdd9cedd136714696536ab30e",
-                "reference": "2c378af30f06fe6fdd9cedd136714696536ab30e",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/4ceecb62f8bfbee56a5ec83f5ab6124710cf89d1",
+                "reference": "4ceecb62f8bfbee56a5ec83f5ab6124710cf89d1",
                 "shasum": ""
             },
             "require": {
@@ -780,7 +780,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2014-12-17 16:18:07"
+            "time": "2014-12-29 10:27:58"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -960,16 +960,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.11.0",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa"
+                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
-                "reference": "ec3961874c43840e96da3a8a1ed20d8c73d7e5aa",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
+                "reference": "1fbe8c2641f2b163addf49cc5e18f144bec6b19f",
                 "shasum": ""
             },
             "require": {
@@ -983,7 +983,7 @@
                 "aws/aws-sdk-php": "~2.4, >2.4.8",
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
-                "phpunit/phpunit": "~3.7.0",
+                "phpunit/phpunit": "~4.0",
                 "raven/raven": "~0.5",
                 "ruflin/elastica": "0.90.*",
                 "videlalvaro/php-amqplib": "~2.4"
@@ -1002,7 +1002,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11.x-dev"
+                    "dev-master": "1.12.x-dev"
                 }
             },
             "autoload": {
@@ -1028,7 +1028,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-09-30 13:30:58"
+            "time": "2014-12-29 21:29:35"
         },
         {
             "name": "psr/log",
@@ -1300,16 +1300,16 @@
         },
         {
             "name": "symfony/monolog-bundle",
-            "version": "v2.6.1",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/MonologBundle.git",
-                "reference": "227bbeefe30f2d95e3fe5fbd1ccda414287a957a"
+                "reference": "e8f71c91a3784f3fa1a75fb1f7f4d4826c5f2773"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/227bbeefe30f2d95e3fe5fbd1ccda414287a957a",
-                "reference": "227bbeefe30f2d95e3fe5fbd1ccda414287a957a",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/e8f71c91a3784f3fa1a75fb1f7f4d4826c5f2773",
+                "reference": "e8f71c91a3784f3fa1a75fb1f7f4d4826c5f2773",
                 "shasum": ""
             },
             "require": {
@@ -1327,7 +1327,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6.x-dev"
+                    "dev-master": "2.7.x-dev"
                 }
             },
             "autoload": {
@@ -1355,7 +1355,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2014-07-21 00:36:06"
+            "time": "2014-12-28 16:37:56"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -1584,16 +1584,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.16.2",
+            "version": "v1.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
-                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
+                "reference": "6dc11a1e8ecfc30e2c68aaeb218148409d8e68af",
                 "shasum": ""
             },
             "require": {
@@ -1628,7 +1628,7 @@
                 },
                 {
                     "name": "Twig Team",
-                    "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
                     "role": "Contributors"
                 }
             ],
@@ -1637,7 +1637,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-10-17 12:53:44"
+            "time": "2014-12-25 19:58:19"
         }
     ],
     "packages-dev": [
@@ -1690,15 +1690,17 @@
             "time": "2014-12-07 18:30:52"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20
     },
-    "prefer-stable": false,
-    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },
-    "platform-dev": []
+    "platform-dev": [
+
+    ]
 }

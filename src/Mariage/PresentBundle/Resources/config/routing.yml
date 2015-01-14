@@ -1,0 +1,8 @@
+mariage_present_homepage:
+    path:     /
+    defaults: { _controller: MariagePresentBundle:Present:index }
+
+
+mariage_present_voteForCountry:
+    path:     /vote/{id}
+    defaults: { _controller: MariagePresentBundle:Present:voteForCountry }

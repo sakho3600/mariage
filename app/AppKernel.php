@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Mariage\GuestBundle\MariageGuestBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Mariage\UserBundle\MariageUserBundle(),
+            new Mariage\PresentBundle\MariagePresentBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

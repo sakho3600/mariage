@@ -1,0 +1,108 @@
+{# Here we are in a <div class="row"> </div> #}
+
+{% extends "MariageGuestBundle::layout.html.twig" %}
+
+
+{% block title %}
+    <h1 class="page-header text-center titles"> L'organisation </h1>
+{% endblock %}
+
+{% block table_guests %}
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"> La date </div>
+            </div>
+            <div class="panel-body">
+                Rendez-vous le 13 juin 2015 !
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"> La mairie </div>
+            </div>
+            <div class="panel-body">
+                Rendez-vous à la mairie de Boust.
+            </div>
+            <div class="panel-footer">
+
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5189.218062622762!2d6.187490184211213!3d49.435205130775955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x1f6b8d1f3467decb!2sMairie!5e0!3m2!1sfr!2sfr!4v1420804710258">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"> La salle </div>
+            </div>
+            <table class="table table-bordered table-condensed">
+                <tr>
+                    <th> Salle </th>
+                    <td> Centre socio-culturel </td>
+                </tr>
+                <tr>
+                    <th> Localisation </th>
+                    <td> Rue des Bleuets </td>
+                </tr>
+                <tr>
+                    <th> Code postale </th>
+                    <td> 57570 </td>
+                </tr>
+                <tr>
+                    <th> Ville </th>
+                    <td> Boust </td>
+                </tr>
+                <tr>
+                    <th> Coordonnées GPS </th>
+                    <td> X :6.19462110 Y :49.43662460 </td>
+                </tr>
+                <tr>
+                    <th> Précision </th>
+                    <td> &Agrave; 400m de la mairie </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"> Le traiteur </div>
+            </div>
+            <div class="panel-body">
+                A venir...
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"> Le gâteau </div>
+            </div>
+            <div class="panel-body">
+                Réalisé par Crazy Cake, 18 rue des <s>Gâteaux</s> Châteaux, 57570 Cattenom
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"> Animation et musique </div>
+            </div>
+            <div class="panel-body">
+                Olivier, <a href="tel:0664410360"> 06.64.41.03.60 </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

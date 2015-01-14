@@ -20,3 +20,18 @@ mariage_guest_edit:
     defaults: { _controller: MariageGuestBundle:Guest:editGuest }
     requirements:
         id: \d+
+
+
+mariage_guest_history:
+    path:    /history
+    defaults: { _controller: MariageGuestBundle:Guest:history }
+
+
+mariage_guest_organization:
+    path:    /organization
+    defaults: { _controller: MariageGuestBundle:Guest:organization }
+
+
+mariage_guest_message:
+    path:    /message
+    defaults: { _controller: MariageGuestBundle:Message:addMessage }
