@@ -1,0 +1,35 @@
+{# Main menu include in base.html.twig #}
+{# Here we are in a <div class="row"> #}
+
+<div class="text-center">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="">
+            <a href="{{ path('mariage_guest_history') }}">
+                <span class="glyphicon glyphicon-heart-empty"></span> <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li role="presentation" class="">
+            <a href="{{ path('mariage_guest_homepage') }}">
+                Invités <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li role="presentation" class="">
+            <a href="{{ path('mariage_present_homepage') }}">
+                Liste de mariage <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li role="presentation" class="">
+            <a href="{{ path('mariage_guest_organization') }}">
+                Organisation <span class="sr-only">(current)</span></a>
+        </li>
+
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <li><a href="{{ path('mariage_guest_message') }}"> Confirmer sa présence </a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}"> Déconnexion</a></li>
+        {% else %}
+            <li role="presentation">
+                <a href="{{ path('fos_user_security_login') }}"> Connexion </a>
+            </li>
+        {% endif %}
+    </ul>
+</div>

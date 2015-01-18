@@ -11,21 +11,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class MessageController extends Controller
 {
-    public function indexAction()
-    {
-        $repository = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('MariageGuestBundle:Guest')
-        ;
-        $listGuests = $repository->findBy(array(), array('family'=>'asc', 'firstname'=>'asc'));
-
-        return $this->render('MariageGuestBundle:Guest:guest.html.twig', array(
-            'listGuests' => $listGuests,
-            'nbGuests' => count($listGuests)
-        ));
-    }
-
     public function addMessageAction(Request $request)
     {
         $message = new Message();
@@ -34,12 +19,14 @@ class MessageController extends Controller
         if ($form->handleRequest($request)->isValid())
         {
             $message->setDate(new \DateTime() );
+            $message->setObject("[Mariage] Confirmation venue de l'invité : " . $message->getFirstname() );
             //$em = $this->getDoctrine()->getManager();
-            //$em->persist($guest);
+            //$em->persist($message);
             //$em->flush();
+            $this->sendMyMessage($message);
             $request->getSession()->getFlashBag()->add('notice', 'Message envoyé.');
 
-            return $this->redirect($this->generateUrl('mariage_guest_homepage'
+            return $this->redirect($this->generateUrl('homepage'
             ));
         }
 
@@ -48,8 +35,16 @@ class MessageController extends Controller
         ));
     }
 
-    private function sendMyMessage($message)
+
+    private function sendMyMessage(Message $message)
     {
-        
+        $mail = \Swift_Message::newInstance();
+        $mail->setSubject( $message->getObject() );
+        $mail->setFrom($this->container->getParameter('mailer_user')); //get user email in parameters.yml
+        //$mail->setFrom('iggiotti.florian@neuf.fr');
+        $mail->setTo('iggiotti.florian@gmail.com');
+        $mail->setBody($message->getBody() );
+
+        $this->get('mailer')->send($mail);
     }
 }

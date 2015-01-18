@@ -2,7 +2,11 @@
 
 {% trans_default_domain 'FOSUserBundle' %}
 
+
+
 {% block fos_user_content %}
+    <h1 class="page-header text-center titles"> Connexion</h1>
+
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}

@@ -2,20 +2,21 @@
 ========================== CSS Style ===================================
 ========================================================================*/
 
+@font-face {
+    font-family: 'paradise';
+    src: url('../fonts/Birds_of_paradise.ttf');
+}
 
 @font-face {
     font-family: 'Titles';
     src: url('../fonts/Mf_Wedding_Bells.ttf');
 }
 
-
-#main-brand
-{
-    font-family: 'Titles', sans-serif;
-    font-size: 2em;
-    color: gold;
-    font-weight: bold;
+@font-face {
+    font-family: 'little-days';
+    src: url('../fonts/Little_days.ttf');
 }
+
 
 .titles
 {
@@ -30,7 +31,23 @@
 ======================================== PARAM BOOTSTRAP ===========================
 ====================================================================================*/
 
+.nav-tabs li a
+{
+    color: #000000;
+    font-family: 'paradise', sans-serif;
+    font-size: 1.78em;
+}
+
+
 .panel-title
 {
-    font-size: 1.6em;
+    font-size: 2em;
+    font-family: 'Titles', sans-serif;
+    font-weight: bold;
+}
+
+.paradise
+{
+    font-family: 'paradise';
+    font-size: 1.7em;
 }

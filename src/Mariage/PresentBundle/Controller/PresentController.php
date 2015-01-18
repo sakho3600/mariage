@@ -21,8 +21,16 @@ class PresentController extends Controller
             array('country' => 'finlande')
         );
 
-        $rateIrlande = (count($listIrlande) / (count($listFinlande) + count($listIrlande) )) * 100;
-        $rateFinlande = (count($listFinlande) / (count($listFinlande) + count($listIrlande) )) * 100;
+        if( count($listIrlande) > 0 && count($listFinlande) > 0 )
+        {
+            $rateIrlande = (count($listIrlande) / (count($listFinlande) + count($listIrlande))) * 100;
+            $rateFinlande = (count($listFinlande) / (count($listFinlande) + count($listIrlande))) * 100;
+        }
+        else
+        {
+            $rateIrlande = 50;
+            $rateFinlande = 50;
+        }
 
         return $this->render('MariagePresentBundle:Present:index.html.twig',
             array(

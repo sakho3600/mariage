@@ -3,39 +3,79 @@
 {% extends "MariageGuestBundle::layout.html.twig" %}
 
 
+{% block other_style %}
+<style>
+    body{
+        background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background-size: cover;
+    }
+
+    .well{
+        background: rgba(225,255,255,0.35);
+    }
+
+    table{
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    th{
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
 {% block title %}
     <h1 class="page-header text-center titles"> Liste des invités <span class="badge">{{ nbGuests }}</span></h1>
 {% endblock %}
 
+
 {% block table_guests %}
-    <table class="well table table-bordered table-striped">
-        <thead>
-            <th> Prénom     </th>
-            <th> Famille    </th>
-            <th> Confirmé ? </th>
-            <th> Date confirm  </th>
-        </thead>
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        {% if is_granted("ROLE_ADMIN") %}
+            <div>
+                <a href="{{ path('mariage_guest_add') }}"><span class="glyphicon glyphicon-plus"></span>Ajouter un invité</a>
+            </div>
+            <br/>
+        {% endif %}
 
-        {% for guest in listGuests %}
-            <tr>
-                <td>{{ guest.firstname|capitalize }}</td>
-                <td>{{ guest.family|capitalize }}</td>
-                <td>
-                    {% if guest.confirm %} <span class="glyphicon glyphicon-ok"></span>
-                    {% endif %}
+        <table class="well table table-bordered table-striped table-condensed">
+            <thead>
+                <th> Prénom     </th>
+                <th> Famille    </th>
+                <th> Confirmé ? </th>
+                {% if is_granted("ROLE_ADMIN") %}
+                    <th> Date confirm  </th>
+                {% endif %}
+            </thead>
+
+            {% for guest in listGuests %}
+                <tr>
+                    <td>{{ guest.firstname|capitalize }}</td>
+                    <td>{{ guest.family|capitalize }}</td>
+                    <td>
+                        {% if guest.confirm %} <span class="glyphicon glyphicon-ok"></span>
+                        {% endif %}
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <a href="{{ path('mariage_guest_edit', {'id' : guest.id}) }}"> <span class="glyphicon glyphicon-pencil"></span> </a>
+                            <a href="{{ path('mariage_guest_remove', {'id' : guest.id}) }}"> <span class="glyphicon glyphicon-remove"></span> </a>
+                        {% endif %}
+                    </td>
                     {% if is_granted("ROLE_ADMIN") %}
-                        <a href="{{ path('mariage_guest_edit', {'id' : guest.id}) }}"> <span class="glyphicon glyphicon-pencil"></span> </a>
-                        <a href="{{ path('mariage_guest_remove', {'id' : guest.id}) }}"> <span class="glyphicon glyphicon-remove"></span> </a>
+                        <td>{% if guest.dateConf is not null %} {{ guest.dateConf|date('d/m/Y') }} {% endif %}</td>
                     {% endif %}
-                </td>
-                <td>{% if guest.dateConf is not null %} {{ guest.dateConf|date('d/m/Y') }} {% endif %}</td>
-            </tr>
-        {% endfor %}
-    </table>
+                </tr>
+            {% endfor %}
+        </table>
 
-    {% if is_granted("ROLE_ADMIN") %}
-    <div>
-        <a href="{{ path('mariage_guest_add') }}"><span class="glyphicon glyphicon-plus"></span>Ajouter un invité</a>
+        {% if is_granted("ROLE_ADMIN") %}
+            <div>
+                <a href="{{ path('mariage_guest_add') }}"><span class="glyphicon glyphicon-plus"></span>Ajouter un invité</a>
+            </div>
+        {% endif %}
     </div>
-    {% endif %}
 {% endblock %}

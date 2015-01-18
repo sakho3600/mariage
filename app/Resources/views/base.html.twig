@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}" />
+    {% block other_style %}
+    {% endblock %}
 </head>
 
 <body class="container">
     <div class="row">
     {% block menu %}
-        {% include 'menu.html.twig' only %}
+        {% include 'menu2.html.twig' only %}
     {% endblock %}
     </div>
 
