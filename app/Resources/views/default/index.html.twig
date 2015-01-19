@@ -3,78 +3,108 @@
 
 {% block other_style %}
 <style>
-    {#img { position: absolute; left: 0px; top: 10px; }
-    #img1 {z-index: 1;}
-    #img2 {z-index: 2;}
-    #img3 {z-index: 3;}
-    #img4 {z-index: 4;}
-    #img5 {z-index: 5;}
-    #}
-
-    .carousel-inner {
-        border: 5px solid white;
-        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    html{
+        min-height: 100%;
+    }
+    body{
+        background: -moz-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -webkit-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -ms-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -o-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
     }
 </style>
 {% endblock %}
 
 {% block body %}
     <div class="page-header">
-        <h1 class="text-center titles"> Mariage de Mel et Flo</h1>
+        <h1 class="text-center titles"> Il était une fois...</h1>
     </div>
 
-
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="item active"> <img alt="" src="{{ asset('img/1.png') }}"></div>
-            <div class="item"> <img alt="" src="{{ asset('img/2.png') }}"></div>
-            <div class="item"> <img alt="" src="{{ asset('img/3.png') }}"></div>
-            <div class="item"> <img alt="" src="{{ asset('img/4.png') }}"></div>
-            <div class="item"> <img alt="" src="{{ asset('img/5.png') }}"></div>
+    <div class="carousel-container col-xs-12">
+        <div id="carousel">
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/1.png') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Commencement</h4>
+                    <p>
+                        Le 13 mars 2007. Deux étudiants à Metz...
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/2.png') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Emménagement</h4>
+                    <p>
+                        Le 2 décembre 2007, nous emménageons dans notre premier appartement, au 8 rue de la Haye à Metz.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/wally_tigresse.jpg') }}"></a>
+                <div class="carousel-caption">
+                    <h4> La fammille s'agrandie</h4>
+                    <p>
+                        Durant l'été 2008, nous adoptons Wall-E et Tigresse.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/crevette_berlioz.jpg') }}"></a>
+                <div class="carousel-caption">
+                    <h4> La fammille s'agrandie (suite)</h4>
+                    <p>
+                        Et les deux années suivantes, nous adopterons Crevette puis Berlioz.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/4.png') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Pacs </h4>
+                    <p>
+                        Le 3 décembre 2010, nous nous pacsons au tribunal de Metz.
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/5.png') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Fiancailles</h4>
+                    <p>
+                        En avril 2014, nous décidons de nous marier. La date est fixée au <b>13 juin 2015</b> !
+                    </p>
+                </div>
+            </div>
         </div>
-        <a class="left carousel-control" href="#carousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div>
 
-    {#
-    <div class="row">
-        <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-            <img src="{{ asset('img/5.png') }}" id="img5" />
-            <img src="{{ asset('img/4.png') }}" id="img4" />
-            <img src="{{ asset('img/3.png') }}" id="img3" />
-            <img src="{{ asset('img/2.png') }}" id="img2" />
-            <img src="{{ asset('img/1.png') }}" id="img1" />
-        </div>
+        <div id="carousel-left"><img src="{{ asset('img/arrow-left.gif') }}" /></div>
+        <div id="carousel-right"><img src="{{ asset('img/arrow-right.gif') }}" /></div>
     </div>
-    #}
 
 {% endblock %}
 
 
 {% block javascripts %}
     {{ parent() }}
-    {#
+    <script src="{{ asset('js/jquery-1.7.min.js') }}" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ asset('js/jquery.featureCarousel.min.js') }}" type="text/javascript" charset="utf-8"></script>
     <script>
-        $(function() {
-            $('img').first().fadeOut(3000, function suivante() {
-                $(this).next('img').fadeOut(3000,suivante);
+        $(document).ready(function() {
+            var carousel = $("#carousel").featureCarousel({
+                // include options like this:
+                // (use quotes only for string values, and no trailing comma after last option)
+                // option: value,
+                // option: value
             });
-            //$('#img1');
+
+            $("#but_prev").click(function () {
+                carousel.prev();
+            });
+            $("#but_next").click(function () {
+                carousel.next();
+            });
         });
     </script>
-    #}
-
-    <script>
-        $(function () {
-            $('.carousel').carousel({interval: 3000});
-            $('#cycle').click(function () {
-                $('.carousel').carousel('cycle');
-            });
-        });
-    </script>
-
 {% endblock %}

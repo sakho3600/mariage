@@ -21,7 +21,7 @@ class PresentController extends Controller
             array('country' => 'finlande')
         );
 
-        if( count($listIrlande) > 0 && count($listFinlande) > 0 )
+        if( count($listIrlande) > 0 || count($listFinlande) > 0 )
         {
             $rateIrlande = (count($listIrlande) / (count($listFinlande) + count($listIrlande))) * 100;
             $rateFinlande = (count($listFinlande) / (count($listFinlande) + count($listIrlande))) * 100;

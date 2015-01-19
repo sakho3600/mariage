@@ -1,5 +1,5 @@
 mariage_present_homepage:
-    path:     /
+    path:     /view
     defaults: { _controller: MariagePresentBundle:Present:index }
 
 

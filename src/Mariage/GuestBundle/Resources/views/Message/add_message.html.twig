@@ -3,6 +3,26 @@
 {% extends "MariageGuestBundle::layout.html.twig" %}
 
 
+{% block other_style %}
+<style>
+    html{
+        min-height: 99%;
+    }
+    body{
+        min-height: 99%;
+        background-image: url("{{ asset('img/maries_parapluie.jpg') }}");
+        background-position: bottom left;
+        background-repeat: no-repeat;
+    }
+    .well {
+        background: rgba(0, 0, 0, 0.25);
+    }
+    p{
+        padding-top: 10px;
+    }
+</style>
+{% endblock %}
+
 {% block title %}
     <h1 class="page-header text-center titles"> Confirmer sa présence </h1>
 {% endblock %}
@@ -12,7 +32,7 @@
 
 <div class="col-xs-12">
     <p class="text-center paradise">
-        Veuillez également nous préciser toute spécificité ou difficulté alimentaire. Merci.
+        Veuillez également nous préciser toute spécificité ou contrainte alimentaire. Merci.
     </p>
     <br/>
 </div>

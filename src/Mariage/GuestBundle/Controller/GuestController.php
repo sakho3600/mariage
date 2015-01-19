@@ -92,12 +92,6 @@ class GuestController extends Controller
     }
 
 
-    public function historyAction()
-    {
-        return $this->render('MariageGuestBundle:Guest:history.html.twig'
-        );
-    }
-
     public function organizationAction()
     {
         return $this->render('MariageGuestBundle:Guest:organization.html.twig'

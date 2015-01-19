@@ -4,23 +4,23 @@
 <div class="text-center">
     <ul class="nav nav-tabs">
         <li role="presentation" class="">
-            <a href="{{ path('mariage_guest_history') }}">
-                <span class="glyphicon glyphicon-heart-empty"></span> <span class="sr-only">(current)</span></a>
+            <a href="{{ path('homepage') }}">
+                <span class="glyphicon glyphicon-heart-empty"></span><span class="sr-only"></span></a>
         </li>
 
         <li role="presentation" class="">
             <a href="{{ path('mariage_guest_homepage') }}">
-                Invités <span class="sr-only">(current)</span></a>
+                Invités <span class="sr-only"></span></a>
         </li>
 
         <li role="presentation" class="">
             <a href="{{ path('mariage_present_homepage') }}">
-                Liste de mariage <span class="sr-only">(current)</span></a>
+                Liste de mariage <span class="sr-only"></span></a>
         </li>
 
         <li role="presentation" class="">
             <a href="{{ path('mariage_guest_organization') }}">
-                Organisation <span class="sr-only">(current)</span></a>
+                Organisation <span class="sr-only"></span></a>
         </li>
 
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

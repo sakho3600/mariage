@@ -2,37 +2,78 @@
 
 {% extends "MariagePresentBundle::layout.html.twig" %}
 
+{% block other_style %}
+<style>
+    body{
+        background: linear-gradient(to top, #E1E6FA, white);
+    }
+    .panel-heading{
+        margin: 0;
+        padding: 0;
+    }
+    .panel-title{
+        padding: 2px 0 0 5px ;
+        background: #115882;
+        color: white;
+    }
+</style>
+{% endblock %}
 
 {% block title %}
     <h1 class="page-header text-center titles"> La liste de mariage </h1>
 {% endblock %}
 
 {% block present_list %}
+    <div class="col-xs-12">
+        <p class="lead">
+            Après 8 années de vie commune, notre intérieur est maintenant bien équipé...
+            Nous vous invitons donc à participer au financement de notre voyage de noces.
+        </p>
+        <p class="lead">
+            Mais également à son choix, en votant pour départager l'Irlande et la Finlande.
+            <br />
+            <br />
+        </p>
+    </div>
 
     <div class="col-xs-12 col-sm-9">
         <div class="row">
             <div class="col-xs-12">
-                <p class="lead">
-                    Pour continuer la magie de notre mariage même après la cérémonie, nous souhaitons partir en voyage de noces.
-                    <br />
-                    Notre choix s'est arrété sur deux destinations :
-                </p>
 
                 <ul class="list-group">
-                    <li class="list-group-item"> <h3>Irlande</h3>
+                    <li class="list-group-item">
+                        <h3> <span class="paradise">Irlande</span>
+                            <small><a href="http://www.guide-irlande.com/comptoir-des-voyages/reservez-votre-voyage/itinerants-autotours-irlande/balade-irlandaise/">
+                                    découvrir le voyage</a>
+                            </small>
+                        </h3>
                         <img src="{{ asset('photos/irlande_lac.jpg') }}" class="img-responsive" alt="photo Irlande" />
+                        <ul class="list-group">
+                            <h4>Liste des activités prévues</h4>
+                            <li class="list-group-item"> Boire une Guinness <s>ou</s> ET boire un whiskey</li>
+                            <li class="list-group-item"> Voler son or à un farfadet </li>
+                            <li class="list-group-item"> Trouver un treffle à 4 feuilles </li>
+                            <li class="list-group-item"> Danser une gigue irlandaise </li>
+                        </ul>
                     </li>
-                    <li class="list-group-item"> <h3>Finlande</h3>
+                    <li class="list-group-item">
+                        <h3> <span class="paradise">Finlande</span>
+                            <small><a href="http://www.visitfinland.com/fr/5-choses-a-faire-pour-vivre-hiver-a-fond/">
+                                    découvrir le voyage</a>
+                            </small>
+                        </h3>
                         <img src="{{ asset('photos/finlande.jpg') }}" class="img-responsive" alt="photo Finlande" />
+                        <ul class="list-group">
+                            <h4>Liste des activités prévues</h4>
+                            <li class="list-group-item"> Donner nos lettres au Père-Noël</li>
+                            <li class="list-group-item"> Nourrir Rodolph </li>
+                            <li class="list-group-item"> Dormir dans une kota </li>
+                            <li class="list-group-item"> Danser sur du Rock Sami </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
 
-            <div class="col-xs-12">
-                <p class="lead">
-                    Ainsi, nous vous invitons à contribuer à notre bonheur.
-                </p>
-            </div>
         </div>
     </div>
 
@@ -43,7 +84,7 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <div class="panel panel-success">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="panel-title">
                             Votez !
@@ -51,10 +92,6 @@
                     </div>
 
                     <div class="panel-body">
-                        Nous vous invitons à participer au choix de la destination en votant.
-                    </div>
-
-                    <div class="panel-footer">
                         <div class="btn-group btn-group-justified">
                             <a class="btn btn-success" href="{{ path('mariage_present_voteForCountry', {'id': 'irlande'}) }}">
                                 Irlande </a>
