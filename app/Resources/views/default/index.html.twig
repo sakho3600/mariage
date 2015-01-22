@@ -7,11 +7,11 @@
         min-height: 100%;
     }
     body{
-        background: -moz-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
-        background: -webkit-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
-        background: -ms-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
-        background: -o-linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
-        background: linear-gradient(bottom, rgba(253, 108, 158, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -moz-linear-gradient(bottom, rgba(97, 75, 58, 0) , rgba(97, 75, 58, 0.8)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -webkit-linear-gradient(bottom, rgba(97, 75, 58, 0) , rgba(97, 75, 58, 0.8)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -ms-linear-gradient(bottom, rgba(97, 75, 58, 0) , rgba(97, 75, 58, 0.8)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: -o-linear-gradient(bottom, rgba(97, 75, 58, 0) , rgba(97, 75, 58, 0.8)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
+        background: linear-gradient(bottom, rgba(97, 75, 58, 0) , rgba(97, 75, 58, 0.8)) 0 0 no-repeat, url("{{ asset('img/cake.png') }}") bottom left no-repeat;
     }
 </style>
 {% endblock %}
@@ -24,7 +24,7 @@
     <div class="carousel-container col-xs-12">
         <div id="carousel">
             <div class="carousel-feature">
-                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/1.png') }}"></a>
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/mel_flo.jpg') }}"></a>
                 <div class="carousel-caption">
                     <h4> Commencement</h4>
                     <p>
@@ -33,7 +33,23 @@
                 </div>
             </div>
             <div class="carousel-feature">
-                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/2.png') }}"></a>
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/flo.jpg') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Commencement (suite)</h4>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/mel_jo.jpg') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Commencement (suite)</h4>
+                    <p>
+                        Mélanie et son frère
+                    </p>
+                </div>
+            </div>
+
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/metz.jpg') }}"></a>
                 <div class="carousel-caption">
                     <h4> Emménagement</h4>
                     <p>
@@ -41,6 +57,7 @@
                     </p>
                 </div>
             </div>
+
             <div class="carousel-feature">
                 <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/wally_tigresse.jpg') }}"></a>
                 <div class="carousel-caption">
@@ -59,8 +76,9 @@
                     </p>
                 </div>
             </div>
+
             <div class="carousel-feature">
-                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/4.png') }}"></a>
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/pacs.jpg') }}"></a>
                 <div class="carousel-caption">
                     <h4> Pacs </h4>
                     <p>
@@ -68,12 +86,22 @@
                     </p>
                 </div>
             </div>
+
             <div class="carousel-feature">
-                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('img/5.png') }}"></a>
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/paris.jpg') }}"></a>
                 <div class="carousel-caption">
                     <h4> Fiancailles</h4>
                     <p>
                         En avril 2014, nous décidons de nous marier. La date est fixée au <b>13 juin 2015</b> !
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-feature">
+                <a href="#"><img class="carousel-image" alt="Image Caption" src="{{ asset('photos/mel_moto.jpg') }}"></a>
+                <div class="carousel-caption">
+                    <h4> Fiancailles (suite)</h4>
+                    <p>
+                        Rendez-vous le <b>13 juin</b> !!!
                     </p>
                 </div>
             </div>
