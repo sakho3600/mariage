@@ -1,0 +1,89 @@
+{# Here we are in a <div class="row"> </div> #}
+
+{% extends "MariageGuestBundle::layout.html.twig" %}
+
+
+{% block other_style %}
+<style>
+    body{
+        background: -moz-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: -ms-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: -o-linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background: linear-gradient(bottom, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 1)) 0 0 no-repeat, url("{{ asset('img/vinyl.jpg') }}") 100% 0% no-repeat;
+        background-size: cover;
+    }
+
+    .well{
+        background: rgba(225,255,255,0.35);
+    }
+
+    table{
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    th{
+        text-align: center;
+    }
+    .lead{
+        color: darkred;
+        text-shadow: #ffffff 4px 3px 3px;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+    <h1 class="page-header text-center titles"> Liste des musiques <span class="badge">{{ nbMusics }}</span></h1>
+{% endblock %}
+
+
+{% block table_guests %}
+    <div class="col-xs-12">
+        <br/>
+        <p class="lead text-center">
+            <b>Proposez nous les musiques que vous souhaiteriez entendre...</b>
+        </p>
+    </div>
+
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        {% if is_granted("ROLE_USER") %}
+            <div>
+                <a href="{{ path('mariage_guest_addMusic') }}"><span class="glyphicon glyphicon-plus"></span>Proposer une musique</a>
+            </div>
+            <br/>
+        {% endif %}
+
+        <table class="well table table-bordered table-striped table-condensed">
+            <thead>
+                <th> Artiste     </th>
+                <th> Titre      </th>
+                {% if is_granted("ROLE_ADMIN") %}
+                    <th> Actions  </th>
+                {% endif %}
+                <th> N°     </th>
+            </thead>
+
+            {% for music in listMusics %}
+                <tr>
+                    <td> {{ music.artist|capitalize }}  </td>
+                    <td> {{ music.title|capitalize }}   </td>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <td>
+
+                            <a href="{{ path('mariage_guest_editMusic', {'id' : music.id}) }}"> <span class="glyphicon glyphicon-pencil"></span> </a>
+                            <a href="{{ path('mariage_guest_removeMusic', {'id' : music.id}) }}"> <span class="glyphicon glyphicon-remove"></span> </a>
+                        </td>
+                    {% endif %}
+                    <td class="text-center"> {{ loop.index }} </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        {% if is_granted("ROLE_USER") %}
+            <div>
+                <a href="{{ path('mariage_guest_addMusic') }}"><span class="glyphicon glyphicon-plus"></span>Proposer une musique</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -29,6 +29,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        my_service:    "@mariage_guest.myService"
 
 # Assetic Configuration
 assetic:

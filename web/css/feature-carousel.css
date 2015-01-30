@@ -6,10 +6,10 @@
   width:100%;
 }
 #carousel {
-  height:280px;
+  position:relative;
+  height:300px;
   width:100%;
   background : rgba(203,203,203,0.2);
-  position:relative;
   margin-bottom:0.5em;
   font-size:12px;
   font-family: Arial;
@@ -35,13 +35,14 @@
 }
 .carousel-feature .carousel-caption {
   position:absolute;
-  bottom:0;
+  top:0;
   left: 0;
   width:100%;
-  background-color: rgba(0,0,0,0.85);
+  height: 4em;
+  background-color: rgba(0,0,0,0.8);
   margin: 0;
-  padding: 0 0 0 4px;
-  border-radius: 0 0 5px 5px;
+  padding: 2px 0 0 3px;
+  border-radius: 5px 5px 0 0;
 }
 .carousel-feature .carousel-caption p {
   margin:0;

@@ -30,3 +30,28 @@ mariage_guest_organization:
 mariage_guest_message:
     path:    /message
     defaults: { _controller: MariageGuestBundle:Message:addMessage }
+
+
+
+mariage_guest_music:
+    path:    /musics
+    defaults: { _controller: MariageGuestBundle:Music:music }
+
+
+mariage_guest_addMusic:
+    path:    /add_music
+    defaults: { _controller: MariageGuestBundle:Music:addMusic }
+
+
+mariage_guest_removeMusic:
+    path:     /remove_music/{id}
+    defaults: { _controller: MariageGuestBundle:Music:removeMusic }
+    requirements:
+        id: \d+
+
+
+mariage_guest_editMusic:
+    path:     /edit_music/{id}
+    defaults: { _controller: MariageGuestBundle:Music:editMusic }
+    requirements:
+        id: \d+

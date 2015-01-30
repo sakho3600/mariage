@@ -28,31 +28,24 @@
 {% endblock %}
 
 {% block title %}
-    <h1 class="page-header text-center titles"> Confirmer sa présence </h1>
+    <h1 class="page-header text-center titles"> Proposer une musique </h1>
 {% endblock %}
 
 
 {% block table_guests %}
-
-<div class="col-xs-12">
-    <p class="text-center paradise">
-        Veuillez également nous préciser toute spécificité ou contrainte alimentaire. Merci.
-    </p>
-    <br/>
-</div>
 
 <div class="well">
     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
         {{ form_errors(form) }}
 
         <div class="form-group">
-            {{ form_label(form.firstname, 'Prénom', {'label_attr': {'class': 'control-label col-xs-12 col-sm-2'}} ) }}
-            {{ form_widget(form.firstname, {'attr': {'class': 'col-xs-12 col-sm-6'}}) }}
+            {{ form_label(form.artist, 'Artiste', {'label_attr': {'class': 'control-label col-xs-12 col-sm-2'}} ) }}
+            {{ form_widget(form.artist, {'attr': {'class': 'col-xs-12 col-sm-6'}}) }}
         </div>
 
         <div class="form-group">
-            {{ form_label(form.body, 'Message', {'label_attr': {'class': 'control-label col-xs-12 col-sm-2'}} ) }}
-            {{ form_widget(form.body, {'attr': {'class': 'col-xs-12 col-sm-6'}} ) }}
+            {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'control-label col-xs-12 col-sm-2'}} ) }}
+            {{ form_widget(form.title, {'attr': {'class': 'col-xs-12 col-sm-6'}} ) }}
         </div>
 
         <div class="form-group">
