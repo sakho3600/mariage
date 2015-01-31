@@ -40,8 +40,7 @@ class MessageController extends Controller
     {
         $mail = \Swift_Message::newInstance();
         $mail->setSubject( $message->getObject() );
-        $mail->setFrom($this->container->getParameter('mailer_user')); //get user email in parameters.yml
-        //$mail->setFrom('iggiotti.florian@neuf.fr');
+        $mail->setFrom('iggiotti.florian@neuf.fr');
         $mail->setTo('iggiotti.florian@gmail.com');
         $mail->setBody($message->getBody() );
 
