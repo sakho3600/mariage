@@ -26,6 +26,10 @@
     text-shadow: rgba(0,0,0,0.4) 5px 5px 10px;
 }
 
+#timer
+{
+    color: darkred;
+}
 
 /*==================================================================================
 ======================================== PARAM BOOTSTRAP ===========================
@@ -35,7 +39,7 @@
 {
     color: #000000;
     font-family: 'paradise', sans-serif;
-    font-size: 1.78em;
+    font-size: 1.9em;
 }
 
 
@@ -50,4 +54,11 @@
 {
     font-family: 'paradise';
     font-size: 1.7em;
+}
+
+.label
+{
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
