@@ -26,6 +26,9 @@ class MusicController extends Controller
         ));
     }
 
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function addMusicAction(Request $request)
     {
         $music = new Music();

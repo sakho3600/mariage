@@ -11,6 +11,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class MessageController extends Controller
 {
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function addMessageAction(Request $request)
     {
         $message = new Message();

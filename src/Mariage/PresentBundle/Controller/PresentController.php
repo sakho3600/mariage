@@ -4,10 +4,15 @@ namespace Mariage\PresentBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Mariage\PresentBundle\Entity\Vote;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
 
 
 class PresentController extends Controller
 {
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function indexAction()
     {
         $repository = $this->getDoctrine()->getManager()
@@ -39,6 +44,9 @@ class PresentController extends Controller
         ));
     }
 
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
     public function voteForCountryAction($id)
     {
         $vote = new Vote($id, $_SERVER['REMOTE_ADDR']);
