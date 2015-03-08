@@ -17,6 +17,7 @@ class GuestType extends AbstractType
         $builder
             ->add('firstname',  'text')
             ->add('family',     'text')
+            ->add('confirm', 'checkbox', array('required' => false))
         ;
     }
     

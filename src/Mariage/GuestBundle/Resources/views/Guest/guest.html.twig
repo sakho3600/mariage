@@ -31,7 +31,11 @@
 
 {% block title %}
     <h1 class="page-header text-center titles"> Liste des invités
-        <span class="label label-primary">{{ nbGuests }}</span></h1>
+        <span class="label label-primary">{{ nbGuests }}</span>
+        {% if is_granted("ROLE_ADMIN") %}
+            <span class="label label-primary">{{ nbGuestsConfirm }}</span>
+        {% endif %}
+    </h1>
 {% endblock %}
 
 

@@ -20,9 +20,12 @@ class GuestController extends Controller
         ;
         $listGuests = $repository->findBy(array(), array('family'=>'asc', 'firstname'=>'asc'));
 
+        $listGuestsConfirm = $repository->findBy(array('confirm' => 1) );
+
         return $this->render('MariageGuestBundle:Guest:guest.html.twig', array(
             'listGuests' => $listGuests,
-            'nbGuests' => count($listGuests)
+            'nbGuests' => count($listGuests),
+            'nbGuestsConfirm' => count($listGuestsConfirm)
         ));
     }
 
